@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -68,4 +72,21 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     implementation("androidx.core:core-splashscreen:1.0.1")
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.datastore:datastore:1.0.0")
+
+    implementation("com.google.dagger:hilt-android:2.49")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
+
+
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

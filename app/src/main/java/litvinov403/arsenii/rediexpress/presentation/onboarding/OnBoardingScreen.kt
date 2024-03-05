@@ -39,7 +39,9 @@ import litvinov403.arsenii.rediexpress.ui.theme.RobotoRegular
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    event: (OnBoardingEvent) -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) {
             pages.size
@@ -134,7 +136,7 @@ fun OnBoardingScreen() {
                         ),
                         onClick = {
                             scope.launch {
-                                //TODO: Navigate to Home Screen
+                                event(OnBoardingEvent.SaveAppEntry)
                             }
                         }
                     )
@@ -162,7 +164,7 @@ fun OnBoardingScreen() {
                             ),
                             modifier = Modifier.clickable {
                                 scope.launch {
-                                    //TODO: Navigate to Home Screen
+                                    event(OnBoardingEvent.SaveAppEntry)
                                 }
                             }
                         )
