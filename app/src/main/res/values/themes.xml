@@ -2,8 +2,8 @@
 <resources>
 
     <style name="Theme.RediExpress" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+        <!--<item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>-->
     </style>
 
 </resources>
